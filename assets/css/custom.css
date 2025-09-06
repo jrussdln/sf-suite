@@ -1,0 +1,144 @@
+.dot-circle-spinner {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	border: 3px solid #28a745; /* green spinner */
+	border-top-color: transparent;
+	border-radius: 50%;
+	animation: spin 1s linear infinite;
+	vertical-align: middle;
+}
+
+@keyframes spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+/* When modal is open, blur everything behind it */
+body.modal-open .modal-backdrop {
+	backdrop-filter: blur(52px); /* Gaussian blur */
+	-webkit-backdrop-filter: blur(52px); /* Safari */
+	background-color: rgba(0, 0, 0, 0.3) !important; /* semi-transparent dark */
+}
+/* GLOBAL MINIMAL SCROLLBARS */
+
+/* For Chrome, Edge, Safari */
+::-webkit-scrollbar {
+	width: 6px; /* very thin scrollbar */
+	height: 6px; /* for horizontal scroll */
+}
+
+::-webkit-scrollbar-track {
+	background: transparent; /* no visible track */
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: rgba(0, 0, 0, 0.25); /* subtle dark grey */
+	border-radius: 20px; /* very rounded */
+	transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: rgba(0, 0, 0, 0.45); /* slightly darker on hover */
+}
+
+/* For Firefox */
+* {
+	scrollbar-width: thin; /* slim scrollbar */
+	scrollbar-color: rgba(0, 0, 0, 0.25) transparent;
+}
+/* Apply blue border to all required inputs and selects */
+input:required,
+select:required {
+	border: 1px solid #007bff; /* Bootstrap blue color */
+}
+
+/* Optional: change focus border too */
+input:required:focus,
+select:required:focus {
+	border-color: #0056b3;
+	box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+/* Slow down the collapse animation */
+.accordion-collapse {
+	transition: height 0.8s ease; /* 0.8s for slower opening */
+}
+.step {
+	position: relative;
+	text-align: center;
+	flex: 1;
+}
+
+.step-circle {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background-color: #dee2e6;
+	color: #6c757d;
+	font-size: 0.75rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	font-weight: bold;
+	z-index: 2;
+	position: relative;
+}
+
+.step-line {
+	position: absolute;
+	top: 30%; /* slightly above center */
+	left: 50%;
+	right: -50%;
+	height: 2px;
+	background-color: #dee2e6;
+	transform: translateY(-50%);
+	z-index: 1;
+}
+
+.step:last-child .step-line {
+	display: none; /* no line after last step */
+}
+
+.step-label {
+	font-size: 0.65rem;
+	margin-top: 3px;
+	color: #6c757d;
+}
+
+/* Active & Completed states */
+.step.active .step-circle {
+	background-color: #0d6efd;
+	color: #fff;
+}
+
+.step.completed .step-circle {
+	background-color: #dee2e6;
+	color: #fff;
+}
+
+.step.completed .step-line {
+	background-color: #dee2e6;
+}
+.anc-row {
+  display: flex;
+  white-space: nowrap;
+}
+
+@keyframes scroll-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* move half the total width (duplicated content) */
+}
+
+@keyframes scroll-right {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-left {
+  animation: scroll-left 10s linear infinite;
+}
+
+.animate-right {
+  animation: scroll-right 10s linear infinite;
+}
