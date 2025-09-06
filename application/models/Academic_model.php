@@ -505,7 +505,6 @@ class Academic_model extends CI_Model
     }
     public function getPersonnelById($id)
     {
-        // ✅ Get active school year ID
         $active_sy_id = $this->Main_model->getActiveSchoolYearId();
 
         $this->db->select("
