@@ -1,11 +1,12 @@
+<!-- Section Management -->
 <div class="pb-3">
   <div class="row g-4">
     <div class="col-12 col-xxl-6">
-      <div class="mb-3">
-        <h3 class="mb-2">Section</h3>
-        <h5 class="text-body-tertiary fw-semibold">Browse and manage active academic year, curriculum, and strand/track offerings.</h5>
+      <div class="mb-2 d-flex align-items-center gap-2">
+        <i class="uil uil-users-alt text-warning" style="font-size: 1.4rem;"></i>
+        <h4 class="fw-semibold mb-0">Section Management</h4>
       </div>
-      <hr class="bg-body-secondary mb-0 mt-1" />
+      <hr class="bg-body-secondary mb-0 mt-2" />
     </div>
   </div>
 </div>
@@ -51,7 +52,7 @@
       </div>
 
       <div class="card-body">
-        <div class="list-group" style="max-height: 350px; overflow-y: auto; overflow-x: hidden;">
+        <div class="list-group" style="height: calc(75vh - 75px); overflow-y: auto; overflow-x: hidden;">
           <?php if (!empty($all_sections)): ?>
             <div class="row g-3"> <!-- Bootstrap row with gap -->
               <?php foreach ($all_sections as $section): ?>
@@ -158,7 +159,8 @@
           style="font-weight: normal; font-size: 12px; line-height: 2;">
         </h1>
 
-        <div class="d-flex gap-1">
+        <!-- Desktop buttons -->
+        <div class="d-flex gap-1 d-none d-md-flex">
 
           <!-- Add Student Button -->
           <button type="button"
@@ -178,8 +180,33 @@
           </button>
 
         </div>
+
+        <!-- Mobile dropdown -->
+        <div class="dropdown d-md-none">
+          <button class="btn btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="uil uil-ellipsis-v"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <button type="button"
+                class="dropdown-item add-student-btn"
+                data-bs-toggle="modal"
+                data-bs-target="#editStudentModal">
+                <i class="uil uil-plus"></i> Add Student
+              </button>
+            </li>
+            <li>
+              <button type="button"
+                class="dropdown-item bulk-transfer-btn"
+                id="bulkTransferBtn">
+                <i class="uil uil-exchange-alt"></i> Transfer Student
+              </button>
+            </li>
+          </ul>
+        </div>
+
       </div>
-      <div class="card-body" style="max-height: 350px; overflow-y: auto;">
+      <div class="card-body" style="height: calc(75vh - 75px); overflow-y: auto; overflow-x: hidden;">
         <!-- Search Box -->
         <div class="mb-1 sticky-top" style="z-index: 10; top: 0;">
           <input type="text"
@@ -187,6 +214,7 @@
             class="form-control form-control-sm rounded-pill"
             placeholder="🔍 Search student by LRN or Name">
         </div>
+
         <table class="table table-bordered table-sm text-center align-middle" style="font-size: 12px;">
           <thead class="table">
             <tr>
@@ -200,10 +228,11 @@
             </tr>
           </thead>
           <tbody>
-            
+
           </tbody>
         </table>
       </div>
+
 
     </div>
   </div>
@@ -467,36 +496,59 @@
           if (response.length > 0) {
             $.each(response, function(index, student) {
               tbody.append(`
-        <tr style="font-size: 12px; height: 28px;">
-            <td style="padding: 3px; text-align: center;">
-                <input type="checkbox" class="student-checkbox" value="${student.stud_id}" data-section="${student.section_id}">
-            </td>
-            <td style="padding: 3px; text-align: center;">${student.stud_lrn}</td>
-            <td style="padding: 3px; text-align: center;">${student.stud_name}</td>
-            <td style="padding: 3px; text-align: center;">${student.stud_sex}</td>
-            <td style="padding: 3px; text-align: center;">
-                <!-- Edit Button -->
-                <button class="btn btn-sm editStudent" data-id="${student.stud_id}" style="padding: 2px 6px;">
-                    <i class="uil uil-edit"></i>
-                </button>
-                <!-- Transfer Button -->
-                <button type="button" class="btn btn-sm transfer-btn" style="padding: 2px 6px;" data-id="${student.stud_id}" 
-                        data-name="${student.stud_name}"  data-section="${student.section_id}" data-bs-toggle="modal"
-            data-bs-target="#transferStudentModal">
-                    <i class="uil uil-exchange-alt"></i>
-                </button>
-                
-                <!-- Warning Button -->
-                <button type="button" class="btn btn-sm warningStudentButton" style="padding: 2px 6px; color: #ff0000ff;">
-                    <i class="uil uil-exclamation-circle"></i>
-                </button>
-            </td>
-        </tr>
-        <!-- Example "No students found" row -->
-            <tr id="noResults" class="d-none">
-              <td colspan="5" class="text-center">No students found</td>
-            </tr>
-      `);
+              <tr style="font-size: 12px; height: 28px;">
+                <td style="padding: 3px; text-align: center;">
+                  <input type="checkbox" class="student-checkbox" value="${student.stud_id}" data-section="${student.section_id}">
+                </td>
+                <td style="padding: 3px; text-align: center;">${student.stud_lrn}</td>
+                <td style="padding: 3px; text-align: center;">${student.stud_name}</td>
+                <td style="padding: 3px; text-align: center;">${student.stud_sex}</td>
+                <td style="padding: 3px; text-align: center;">
+                  
+                  <!-- Desktop buttons -->
+                  <div class="d-none d-md-block">
+                    <button class="btn btn-sm editStudent" data-id="${student.stud_id}" style="padding: 2px 6px;">
+                      <i class="uil uil-edit"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm transfer-btn" style="padding: 2px 6px;" 
+                      data-id="${student.stud_id}" data-name="${student.stud_name}"  
+                      data-section="${student.section_id}" data-bs-toggle="modal" data-bs-target="#transferStudentModal">
+                      <i class="uil uil-exchange-alt"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm warningStudentButton" style="padding: 2px 6px; color: #ff0000ff;">
+                      <i class="uil uil-exclamation-circle"></i>
+                    </button>
+                  </div>
+
+                  <!-- Mobile dropdown -->
+                  <div class="dropdown d-md-none">
+                    <button class="btn btn-sm" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="uil uil-ellipsis-v"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                      <li>
+                        <button class="dropdown-item editStudent" data-id="${student.stud_id}">
+                          <i class="uil uil-edit"></i> Edit
+                        </button>
+                      </li>
+                      <li>
+                        <button class="dropdown-item transfer-btn" data-id="${student.stud_id}" 
+                          data-name="${student.stud_name}" data-section="${student.section_id}" 
+                          data-bs-toggle="modal" data-bs-target="#transferStudentModal">
+                          <i class="uil uil-exchange-alt"></i> Transfer
+                        </button>
+                      </li>
+                      <li>
+                        <button class="dropdown-item warningStudentButton" style="color:#ff0000ff;">
+                          <i class="uil uil-exclamation-circle"></i> Warning
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+
+                </td>
+              </tr>
+              `);
             });
           } else {
             tbody.append(`<tr><td colspan="4" class="text-center" style="font-size: 12px; padding: 5px;">No students found</td></tr>`);

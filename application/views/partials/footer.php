@@ -57,6 +57,16 @@
 <?php include APPPATH . 'views/assets/core_js.php'; ?>
 <script>
   $(document).ready(function() {
+    // When a sidebar link is clicked
+    $(".nav-ajax, .navbar-vertical .nav-link").on("click", function() {
+      var navbar = $("#navbarVerticalCollapse");
+      var bsCollapse = bootstrap.Collapse.getInstance(navbar[0]);
+      if (bsCollapse) {
+        bsCollapse.hide(); // collapse sidebar
+      }
+    });
+  });
+  $(document).ready(function() {
     $('[data-action="user_logout"]').on('click', function(e) {
       e.preventDefault(); // <-- Prevent immediate navigation
       Swal.fire({
@@ -89,6 +99,5 @@
         eyeSlash.style.display = 'none';
       }
     });
-    
   });
 </script>

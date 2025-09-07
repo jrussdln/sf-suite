@@ -1,11 +1,12 @@
+<!-- Student Analytics -->
 <div class="pb-3">
   <div class="row g-4">
     <div class="col-12 col-xxl-6">
-      <div class="mb-3">
-        <h3 class="mb-2">Student Analytics</h3>
-        <h5 class="text-body-tertiary fw-semibold">View and analyze student's basic information, academic performance, and summarized insights.</h5>
+      <div class="mb-2 d-flex align-items-center gap-2">
+        <i class="uil uil-chart-line text-danger" style="font-size: 1.4rem;"></i>
+        <h4 class="fw-semibold mb-0">Student Analytics</h4>
       </div>
-      <hr class="bg-body-secondary mb-0 mt-1" />
+      <hr class="bg-body-secondary mb-0 mt-2" />
     </div>
   </div>
 </div>
@@ -21,20 +22,16 @@
       <div class="card-body">
         <div class="row g-2 align-items-center">
 
-          <!-- Additional Message Input -->
-          <div class="col-12 col-md-10">
+          <!-- Input (Full width on lg, side-by-side on small) -->
+          <div class="col-9 col-md-10">
             <input type="text" id="additionalMessage" class="form-control" placeholder="Enter the Learner Reference Number">
           </div>
 
-          <!-- Buttons (Desktop: Separate | Mobile: Side-by-side) -->
-          <div class="col-12 col-md-2">
-            <div class="row g-2">
-              <div class="col-6 col-md-12">
-                <button class="btn btn-success w-100" title="Send">
-                  <i class="fas fa-search"></i>
-                </button>
-              </div>
-            </div>
+          <!-- Button -->
+          <div class="col-3 col-md-2">
+            <button class="btn btn-success w-100" title="Send">
+              <i class="fas fa-search"></i>
+            </button>
           </div>
 
         </div>

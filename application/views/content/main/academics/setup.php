@@ -1,15 +1,15 @@
+<!-- Academic Setup -->
 <div class="pb-3">
   <div class="row g-4">
     <div class="col-12 col-xxl-6">
-      <div class="mb-3">
-        <h3 class="mb-2">Setup</h3>
-        <h5 class="text-body-tertiary fw-semibold">Browse and manage active academic year, curriculum, and strand/track offerings.</h5>
+      <div class="mb-2 d-flex align-items-center gap-2">
+        <i class="uil uil-setting text-info" style="font-size: 1.4rem;"></i>
+        <h4 class="fw-semibold mb-0">Academic Setup</h4>
       </div>
-      <hr class="bg-body-secondary mb-0 mt-1" />
+      <hr class="bg-body-secondary mb-0 mt-2" />
     </div>
   </div>
 </div>
-
 <div class="row mb-2 align-items-stretch">
   <div class="col-lg-5 col-md-12 mb-2 d-flex">
     <div class="card shadow-sm h-100 w-100">

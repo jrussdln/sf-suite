@@ -1,9 +1,17 @@
 <div class="pb-3">
   <div class="row g-4">
     <div class="col-12 col-xxl-6">
-      <div class="mb-3">
-        <h3 class="mb-2">Dashboard</h3>
-        <h5 class="text-body-tertiary fw-semibold">Overview of system metrics and statistics.</h5>
+      <!-- Dashboard -->
+      <div class="pb-3">
+        <div class="row g-4">
+          <div class="col-12 col-xxl-6">
+            <div class="mb-2 d-flex align-items-center gap-2">
+              <i class="uil uil-apps text-success" style="font-size: 1.4rem;"></i>
+              <h4 class="fw-semibold mb-0">Dashboard</h4>
+            </div>
+            <hr class="bg-body-secondary mb-0 mt-2" />
+          </div>
+        </div>
       </div>
       <hr class="bg-body-secondary mb-3 mt-1" />
       <div class="row align-items-center g-4">

@@ -1,22 +1,24 @@
 <div class="pb-3">
   <div class="row g-4">
     <div class="col-12 col-xxl-6">
-      <div class="mb-3">
-        <h3 class="mb-2">Manage School Personnel</h3>
-        <h5 class="text-body-tertiary fw-semibold">View and analyze student's basic information, academic performance, and summarized insights.</h5>
+      <div class="mb-2 d-flex align-items-center gap-2">
+        <i class="uil uil-users-alt text-primary" style="font-size: 1.4rem;"></i>
+        <h4 class="fw-semibold mb-0">School Personnel Management</h4>
       </div>
-      <hr class="bg-body-secondary mb-0 mt-1" />
+      <hr class="bg-body-secondary mb-0 mt-2" />
     </div>
   </div>
 </div>
+
 <div class="row mb-2 align-items-stretch">
-  <div class="col-lg-5 col-md-12 mb-2">
+  <div class="col-lg-5 col-md-12 mb-2 d-none d-md-block"> <!-- 👈 hide whole column on mobile -->
     <div class="card shadow-sm h-100 w-100">
       <div class="card-header text-white py-1 px-3 bg-primary">
         <h1 class="card-title text-uppercase m-0" style="font-weight: normal; font-size: 12px; line-height: 2;">
         </h1>
       </div>
-      <div class="card-body text-center" style="min-height: 100px; max-height: 440px; overflow-y: hidden; overflow-x: hidden;">
+      <div class="card-body text-center"
+        style="height: calc(85vh - 85px); overflow-y: auto; overflow-x: hidden;">
         <!-- Profile Image -->
         <div class="position-relative d-inline-block mb-1">
           <img id="personnelAvatarCard" class="rounded-circle border border-3 border-primary"
@@ -25,7 +27,7 @@
 
           <!-- Status Dot -->
           <div class="position-absolute bottom-0 end-0 translate-middle 
-              bg-success border border-2 border-white rounded-circle"
+        bg-success border border-2 border-white rounded-circle"
             style="width: 20px; height: 20px; cursor: pointer;">
           </div>
         </div>
@@ -54,27 +56,27 @@
           <!-- Ancillary Profile Section -->
           <div id="selectedAncillaryProfile" class="p-2 rounded mb-1">
             <div id="selectedAncItemsProfile" class="d-flex flex-wrap gap-1 justify-content-center align-items-center">
-              <!-- Dynamic badges will be appended here -->
+              ---
             </div>
           </div>
 
           <!-- Personnel Statistics -->
           <dl class="row g-2 mb-1 text-start">
             <dt class="col-8 text-muted small">User Account Status</dt>
-            <dd class="col-4 fw-semibold small text-end" id="personnelAccountStatusCard"></dd>
+            <dd class="col-4 fw-semibold small text-end" id="personnelAccountStatusCard">---</dd>
 
             <dt class="col-8 text-muted small">Ancillary Assignments</dt>
-            <dd class="col-4 fw-semibold small text-end" id="personnelAncillaryCountCard"></dd>
+            <dd class="col-4 fw-semibold small text-end" id="personnelAncillaryCountCard">---</dd>
 
             <dt class="col-8 text-muted small">Teaching Loads</dt>
-            <dd class="col-4 fw-semibold small text-end" id="personnelLoadsCountCard"></dd>
+            <dd class="col-4 fw-semibold small text-end" id="personnelLoadsCountCard">---</dd>
 
             <dt class="col-8 text-muted small">Avg. Teaching Minutes/Week</dt>
-            <dd class="col-4 fw-semibold small text-end" id="personnelAverageTeachingCard"></dd>
+            <dd class="col-4 fw-semibold small text-end" id="personnelAverageTeachingCard">---</dd>
           </dl>
 
           <!-- Action Buttons -->
-          <div class="d-grid gap-1 mb-1"> <!-- decreased gap and margin-bottom -->
+          <div class="d-grid gap-1 mb-1">
             <button id="personnelDefaultBtn" class="btn btn-success d-flex align-items-center justify-content-center gap-2">
               Select a personnel
             </button>
@@ -85,10 +87,7 @@
               <i class="fas fa-user-slash"></i> Block
             </button>
           </div>
-
         </div>
-
-
       </div>
     </div>
   </div>
@@ -109,7 +108,7 @@
 
 
       <!-- Card Body -->
-      <div class="card-body flex-grow-1" style="min-height: 100px; max-height: 440px; overflow-y: auto; overflow-x: hidden;">
+      <div class="card-body flex-grow-1" style="height: calc(85vh - 85px); overflow-y: auto; overflow-x: hidden;">
         <div class="rounded-xl shadow-md p-1">
           <!-- School Personnel List -->
           <div class="tab-content" id="tab-sp_list">
@@ -235,12 +234,12 @@
                   <div class="col-12 d-flex justify-content-between sticky-bottom">
                     <div>
                       <button type="button" id="backBtnMain" class="nav-link btn btn-secondary btn-sm px-4" data-tab="sp_list">
-                        ← Back
+                        <i class="uil uil-arrow-left"></i>
                       </button>
                     </div>
                     <div class="d-flex gap-2">
                       <button type="button" id="nextBtn" class="btn btn-primary btn-sm px-4">
-                        Next →
+                        <i class="uil uil-arrow-right"></i>
                       </button>
                     </div>
                   </div>
@@ -368,16 +367,16 @@
                     <!-- Left: Back button -->
                     <div>
                       <button type="button" id="backBtn" class="btn btn-secondary btn-sm px-4">
-                        ← Back
+                        <i class="uil uil-arrow-left"></i>
                       </button>
                     </div>
                     <!-- Right: Next and Save buttons -->
                     <div class="d-flex gap-2">
                       <button type="submit" class="btn btn-success btn-sm px-4">
-                        <i class="uil uil-save me-1"></i> Save Profile
+                        <i class="uil uil-save me-1"></i>
                       </button>
                       <button type="button" id="nextBtnAA" class="btn btn-primary btn-sm px-4 d-none">
-                        Next →
+                        <i class="uil uil-arrow-right"></i>
                       </button>
                     </div>
                   </div>
@@ -431,14 +430,14 @@
                     <!-- Left: Back button -->
                     <div>
                       <button type="button" id="backBtnAA" class="btn btn-secondary btn-sm px-4">
-                        ← Back
+                        <i class="uil uil-arrow-left"></i>
                       </button>
                     </div>
 
                     <!-- Save Ancillary Button -->
                     <div class="d-flex gap-2">
                       <button type="button" id="nextBtnTL" class="btn btn-primary btn-sm px-4">
-                        Next →
+                        <i class="uil uil-arrow-right"></i>
                       </button>
                     </div>
 
@@ -538,7 +537,7 @@
                   <div class="col-12 d-flex justify-content-between mt-10 sticky-bottom">
                     <div>
                       <button type="button" id="backBtnTL" class="btn btn-secondary btn-sm px-4">
-                        ← Back
+                        <i class="uil uil-arrow-left"></i>
                       </button>
                     </div>
                     <div class="d-flex gap-2">
@@ -557,24 +556,27 @@
               <!-- STEP 1 -->
               <div id="form-step-settings-1" class="container-fluid g-3 p-0">
                 <!-- Search & Add Button -->
-                <div class="d-flex align-items-center mb-0 sticky-top p-2" style="z-index: 10; top: 0; ">
-                  <!-- Search Box -->
-                  <div class="flex-grow-1 me-2">
-                    <input type="text"
-                      id="searchPlantilla"
-                      class="form-control form-control-sm rounded-pill"
-                      placeholder="🔍 Search plantilla by description or code...">
-                  </div>
-                  <!-- Register Button -->
-                  <div>
-                    <button type="button" class="btn btn-primary rounded-pill px-3" id="addPlantillaBtn">
-                      <i class="uil uil-user-plus"></i>
-                    </button>
-                    <button type="button" class="btn btn-primary rounded-pill px-3" id="nextBtnPL">
-                      <i class="uil uil-arrow-right"></i>
-                    </button>
+                <div class="sticky-top p-2 bg-white" style="z-index: 10; top: 0;">
+                  <div class="d-flex flex-nowrap align-items-center gap-2">
+                    <!-- Search Box -->
+                    <div class="flex-grow-1">
+                      <input type="text"
+                        id="searchPlantilla"
+                        class="form-control form-control-sm rounded-pill"
+                        placeholder="🔍 Search plantilla by description or code...">
+                    </div>
+                    <!-- Buttons -->
+                    <div class="d-flex flex-shrink-0 gap-1">
+                      <button type="button" class="btn btn-primary rounded-pill px-3" id="addPlantillaBtn">
+                        <i class="uil uil-user-plus"></i>
+                      </button>
+                      <button type="button" class="btn btn-primary rounded-pill px-3" id="nextBtnPL">
+                        <i class="uil uil-arrow-right"></i>
+                      </button>
+                    </div>
                   </div>
                 </div>
+
                 <!-- Plantilla Position Form -->
                 <form id="plantillaPositionForm" class="mb-3 p-2 border-0 d-none">
                   <div class="row g-2">
@@ -620,27 +622,30 @@
               <!-- STEP 2 (Hidden by Default) -->
               <div id="form-step-settings-2" class="row g-3 d-none">
                 <!-- Search & Add Button -->
-                <div class="d-flex align-items-center mb-0 sticky-top p-2" style="z-index: 10; top: 0; ">
-                  <!-- Search Box -->
-                  <div class="flex-grow-1 me-2">
-                    <input type="text"
-                      id="searchAncillaryList"
-                      class="form-control form-control-sm rounded-pill"
-                      placeholder="🔍 Search ancillary by description or code...">
-                  </div>
-                  <!-- Register Button -->
-                  <div>
-                    <button type="button" class="btn btn-primary rounded-pill px-3" id="addAncillaryBtn">
-                      <i class="uil uil-user-plus"></i>
-                    </button>
-                    <button type="button" class="btn btn-primary rounded-pill px-3" id="backBtnAL">
-                      <i class="uil uil-arrow-left"></i>
-                    </button>
-                    <button type="button" class="btn btn-primary rounded-pill px-3" id="nextBtnAL">
-                      <i class="uil uil-arrow-right"></i>
-                    </button>
+                <div class="sticky-top p-2 bg-white" style="z-index: 10; top: 0;">
+                  <div class="d-flex flex-nowrap align-items-center gap-2">
+                    <!-- Search Box -->
+                    <div class="flex-grow-1">
+                      <input type="text"
+                        id="searchAncillaryList"
+                        class="form-control form-control-sm rounded-pill"
+                        placeholder="🔍 Search ancillary by description or code...">
+                    </div>
+                    <!-- Buttons -->
+                    <div class="d-flex flex-shrink-0 gap-1">
+                      <button type="button" class="btn btn-primary rounded-pill px-3" id="addAncillaryBtn">
+                        <i class="uil uil-user-plus"></i>
+                      </button>
+                      <button type="button" class="btn btn-primary rounded-pill px-3" id="backBtnAL">
+                        <i class="uil uil-arrow-left"></i>
+                      </button>
+                      <button type="button" class="btn btn-primary rounded-pill px-3" id="nextBtnAL">
+                        <i class="uil uil-arrow-right"></i>
+                      </button>
+                    </div>
                   </div>
                 </div>
+
                 <!-- Plantilla Position Form -->
                 <form id="ancillaryAssignmentListForm" class="mb-3 p-2 border-0 d-none">
                   <div class="row g-2">
@@ -673,7 +678,7 @@
                       class="form-control form-control-sm rounded-pill"
                       placeholder="Inheritance of data from Current School Year to Other School Year." disabled>
                   </div>
-       
+
                   <div>
 
                     <button type="button" class="btn btn-primary rounded-pill px-3" id="backBtnC">
@@ -810,7 +815,7 @@
 
                   </div>
                 </div>
-                
+
                 <div class="col-12">
                   <div class="table-responsive">
 

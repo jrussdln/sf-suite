@@ -1,18 +1,19 @@
 <div class="pb-3">
   <div class="row g-4">
     <div class="col-12 col-xxl-6">
-      <div class="mb-3">
-        <h3 class="mb-2">Subjects</h3>
-        <h5 class="text-body-tertiary fw-semibold">Browse and manage active academic year, curriculum, and strand/track offerings.</h5>
+      <div class="mb-2 d-flex align-items-center gap-2">
+        <i class="uil uil-book-open text-success" style="font-size: 1.4rem;"></i>
+        <h4 class="fw-semibold mb-0">Subject Management</h4>
       </div>
-      <hr class="bg-body-secondary mb-0 mt-1" />
+      <hr class="bg-body-secondary mb-0 mt-2" />
     </div>
   </div>
 </div>
+
 <div class="row mb-2 align-items-stretch">
 
   <!-- JUNIOR HIGH SCHOOL -->
-  <div class="col-lg-6 col-md-12 mb-2 d-flex">
+  <div class="col-lg-6 col-md-12 mb-2 d-none d-md-block">
     <div class="card shadow-sm h-100 w-100">
       <div class="card-header text-white py-1 px-3 d-flex justify-content-start align-items-center">
 
@@ -60,7 +61,7 @@
   </div>
 
   <!-- SENIOR HIGH SCHOOL -->
-  <div class="col-lg-6 col-md-12 mb-2 d-flex">
+  <div class="col-lg-6 col-md-12 mb-2 d-none d-md-block">
     <div class="card shadow-sm h-100 w-100">
       <div class="card-header text-white py-1 px-3 d-flex justify-content-between align-items-center">
         <h1 class="card-title text-uppercase m-0" style="font-weight: normal; font-size: 12px; line-height: 2;">
@@ -116,8 +117,8 @@
         </h1>
       </div>
 
-      <div class="card-body">
-        <div class="row row-cols-1 row-cols-md-2 g-3" style="max-height: 350px; overflow-y: auto;">
+      <div class="card-body" style="height: calc(75vh - 75px); overflow-y: auto; overflow-x: hidden;">
+        <div class="row row-cols-1 row-cols-md-2 g-3">
           <?php if (!empty($all_curriculums)): ?>
             <?php
             $hasActive = false;
@@ -188,7 +189,7 @@
     </div>
   </div>
 </div>
-<div class="row mb-2" id="subjectsInCurriculum" style="display:none; max-height: 350px; overflow-y: auto;">
+<div class="row mb-2" id="subjectsInCurriculum" style="display: none;">
   <div class="col-lg-12">
     <div class="card shadow-sm h-100">
       <div class="card-header py-1 px-3 d-flex justify-content-between align-items-center">
@@ -215,7 +216,7 @@
         </div>
       </div>
 
-      <div class="card-body" style="max-height: 350px; overflow-y: auto;">
+      <div class="card-body" style="height: calc(75vh - 75px); overflow-y: auto; overflow-x: hidden;">
         <!-- Search Box -->
         <div class="mb-1 sticky-top" style="z-index: 10; top: 0;">
           <input type="text"

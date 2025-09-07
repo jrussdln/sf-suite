@@ -1,11 +1,11 @@
 <div class="pb-3">
   <div class="row g-4">
     <div class="col-12 col-xxl-6">
-      <div class="mb-3">
-        <h3 class="mb-2">Alumni Tracer</h3>
-        <h5 class="text-body-tertiary fw-semibold">Send surveys to alumni to collect post-grad insights.</h5>
+      <div class="mb-2 d-flex align-items-center gap-2">
+        <i class="uil uil-map-marker text-primary" style="font-size: 1.4rem;"></i>
+        <h4 class="fw-semibold mb-0">Alumni Tracer</h4>
       </div>
-      <hr class="bg-body-secondary mb-0 mt-1" />
+      <hr class="bg-body-secondary mb-0 mt-2" />
     </div>
   </div>
 </div>
@@ -81,7 +81,7 @@
           Tracer Category
         </h1>
       </div>
-      <div class="card-body">
+      <div class="card-body" style="height: calc(75vh - 75px); overflow-y: auto; overflow-x: hidden;">
         <div class="row g-2 align-items-center">
 
           <!-- Hidden Add Category Row -->
